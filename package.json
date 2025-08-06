@@ -1,7 +1,23 @@
 {
   "name": "loom-downloader-nextjs",
   "version": "0.1.0",
+  "description": "A modern, Next.js-based web application for downloading videos from Loom.com with a clean, professional interface",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stevie1mat/LoomDownloader.git"
+  },
+  "keywords": [
+    "loom",
+    "loom-downloader",
+    "video-downloader",
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss"
+  ],
+  "author": "stevie1mat",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
