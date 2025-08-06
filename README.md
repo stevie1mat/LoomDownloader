@@ -7,6 +7,8 @@ A modern, Next.js-based web application for downloading videos from Loom.com wit
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)
 
+![Loom Video Downloader Screenshot](screenshots/homepage.png)
+
 ## ✨ Features
 
 - **🎯 Single Video Downloads**: Download individual Loom videos with ease
