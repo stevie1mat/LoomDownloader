@@ -7,9 +7,12 @@ const fetchLoomDownloadUrl = async (id: string) => {
     const { data } = await axios.post(`https://www.loom.com/api/campaigns/sessions/${id}/transcoded-url`);
     console.log('Loom API response:', data);
     return data.url;
-  } catch (error: any) {
-    console.error('Loom API error:', error.response?.data || error.message);
-    throw new Error(`Failed to get download URL: ${error.response?.data?.message || error.message}`);
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    const axiosError = error as { response?: { data?: { message?: string } } };
+    const responseMessage = axiosError.response?.data?.message;
+    console.error('Loom API error:', axiosError.response?.data || errorMessage);
+    throw new Error(`Failed to get download URL: ${responseMessage || errorMessage}`);
   }
 };
 
@@ -46,8 +49,9 @@ export async function POST(request: NextRequest) {
       downloadUrl: downloadUrl
     });
     
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     console.error('Download error:', error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 } 

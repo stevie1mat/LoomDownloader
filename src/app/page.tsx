@@ -38,7 +38,6 @@ export default function Home() {
       setProgress(0);
       setDownloadLink(null);
 
-      const videoId = extractVideoId(url);
       setProgress(25);
 
       const response = await fetch('/api/download-single', {
@@ -59,11 +58,11 @@ export default function Home() {
         try {
           const errorData = await response.json();
           errorMessage = errorData.error || 'Download failed';
-        } catch (e) {
+        } catch {
           try {
             const text = await response.text();
             errorMessage = text || 'Download failed';
-          } catch (textError) {
+          } catch {
             errorMessage = `HTTP ${response.status}: ${response.statusText}`;
           }
         }
@@ -74,8 +73,9 @@ export default function Home() {
       setProgress(100);
       setDownloadLink(result.downloadUrl);
 
-    } catch (error: any) {
-      setError(`Error: ${error.message}`);
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      setError(`Error: ${errorMessage}`);
     } finally {
       setIsLoading(false);
     }
