@@ -285,6 +285,6 @@ A: Loom download links have expiration times. Try downloading again.
 
 ---
 
-**Made with ❤️ by the Loom Downloader Team**
+**Made with ❤️ by [Steven Mathew](https://stevenmathew.dev)**
 
-*Last updated: December 2024*
+*Last updated: December 6, 2024*
