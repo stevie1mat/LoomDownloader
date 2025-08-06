@@ -124,7 +124,7 @@ export default function Home() {
           </p>
         </div>
 
-        
+        {/* Download Section */}
         <div className={`max-w-4xl mx-auto rounded-2xl p-8 shadow-lg border ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
           <div className="flex gap-4 items-center bg-gray-50 border-2 border-gray-200 rounded-xl p-2 focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-100 transition-all">
             <select
